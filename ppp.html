@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class ="main_wrap" id ="main_wrap">
+
+
+
+
+
+</div>
+</body>
+<script>
+    let arr = []
+
+    const rand = 50 + Math.ceil(Math.random() * 50);
+    console.log(rand);
+    for (let i = 1; i <= rand; i++) {
+        arr.push(i)
+    }
+    const main_wp = document.getElementById("main_wrap")
+    const number = document.createElement("div")
+    number.innerHTML = onetoback();
+    main_wp.appendChild(number)
+/*
+    const onetoback = () => {
+
+        return arr;
+    }*/
+    console.log(arr);
+
+function onetoback() {
+    let str = '';
+    for (let i = 0; i < arr.length; i++) {
+
+
+        console.log('전'+ arr[i]);
+        str += arr[i] + ' ';
+        if ( i % 10 === 9) {
+            str += '<br/>'
+        }
+
+
+    }
+
+    return str;
+}
+
+</script>
+
+
+
+
+<!--
+if ( i % 10 === 0) {
+str += '<br/>'
+}
+-->
+
+
+<!--
+
+ var arr = [1,2,3,4,5]
+ n = 10 + Math.ceil(Math.random() * 20);
+ var arr2 =[]
+   for(var i =0; i<n; i++){
+        arr2.push(arr[i])
+    }
+    console.log(arr2)
+
+
+
+ var arr = [1,2,3,4,5]
+   var arr2 = []
+    n = 10 + Math.ceil(Math.random() * 20);
+    for(var i =0; i<n; i++){
+        arr2.push(arr[i])}
+    console.log(arr2)
+
+  var arr = [1,2,3,4,5]
+   var arr2 = []
+    n = 10 + Math.ceil(Math.random() * 20);
+    for(var i =1; i<5+n; i++){
+        arr2.push(arr[i])}
+    console.log(arr2)
+
+
+var arr = []
+for (var i = 1; i <= 100; i++) {
+    arr.push(i)
+}
+
+
+
+
+
+[1,2,3,4,5]
+
+n = 10 + Math.ceil(Math.random() * 20);
+
+
+
+var array = [1,2,3,4,5];
+var n = 10+ Math.ceil(Math.randon()*20);
+
+
+for (let
+
+
+
+
+arrNumber = [];
+var n = 10+ Math.ceil(Math.random()*20);
+for(var i=1;i<6;i++){
+arrNumber[i]=i;
+}
+
+for(var i=0;i<arrNumber.length  ;i++){
+                                console.log(arrNumber[i]);
+                                }
+
+                                arrNumber = [];
+                                var n = 10+ Math.ceil(Math.random()*20);
+                                for(var i=1;i<6;i++){
+                                arrNumber[i]=i;
+                                }
+
+                                var n = 10+ Math.ceil(Math.random()*20);-->
+</html>
