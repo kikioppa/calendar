@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="main_wrap" id="main_wrap">
+
+    <div class="month" id="month">
+
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        <tr>
+        </thead>
+
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+
+<script>
+    /*   todayIs();
+
+       function todayIs() {
+           var today = new Date();
+           var dd = today.getDate();
+           var mm = today.getMonth()+1; // Jan is 0
+           var yyyy = today.getFullYear();
+
+           if(dd<10){
+               dd = '0'+dd
+           }
+           if(mm<10){
+               mm = '0'+mm
+           }
+
+           today = yyyy + '-' + mm + '-' + dd;
+           //alert(today);
+           document.getElementById("main_wrap").innerHTML = today;
+           //$('#date').text(today);
+       }
+   */
+
+
+    function setDate() {
+
+        const now = new Date();
+
+        const first_day = new Date();
+        first_day.setFullYear(now.getFullYear())
+        first_day.setMonth(now.getMonth())
+        first_day.setDate(1)
+        first_day.setHours(0)
+        first_day.setMinutes(0)
+        first_day.setSeconds(0)
+
+        console.log(first_day);
+
+        const last_day = new Date();
+        last_day.setFullYear(now.getFullYear())
+        last_day.setMonth(now.getMonth() + 1)
+        last_day.setDate(0)
+        last_day.setHours(0)
+        last_day.setMinutes(0)
+        last_day.setSeconds(0)
+
+        console.log(last_day);
+
+        console.log(last_day.getMonth() + 1);
+
+        function addMonth(first_day) {
+            let getMonth = document.getElementById("month")
+            getMonth.innerHTML = first_day.getMonth() + 1 + '월'
+        }
+
+        function addDate(tr, day) {
+            let td = document.createElement("td")
+            td.innerHTML = day
+            tr.appendChild(td)
+        }
+
+
+        let tr = null;
+        for (let i = 1; i <= last_day.getDate(); i++) {
+            if (i % 7 == 1) {
+                if (tr) {
+                    document.getElementById('tbody').appendChild(tr)
+                }
+                tr = document.createElement('tr')
+            }
+            addDate(tr, i)
+        }
+        if (last_day.getDay() !==6) {
+            document.getElementById('tbody').appendChild(tr)
+        }else{
+            document.getElementById('tbody').appendChild(tr)
+        }
+        addMonth(first_day)
+    }
+
+    setDate()
+
+
+</script>
+</html>
